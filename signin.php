@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="links/css/signup.css">
+  <link rel="stylesheet" href="links/css/signin.css">
   <link rel="stylesheet" href="links/css/index.css">
 </head>
 <body>
@@ -19,40 +19,10 @@
     <div class='signupholder'>
       <div>
         <h1>
-          Sign up :)
+          Sign in :)
         </h1>
       </div>
       <div class="signupholder-formholder">
-        <form method="post">
-          <br>
-          <label for="voornaam">voornaam:</label>
-          <input type="text" id="voornaam" name="voornaam" required>
-          <br>
-          <br>
-          <br>
-          <label for="achternaam">achternaam:</label>
-          <input type="text" id="achternaam" name="achternaam" required>
-          <br>
-          <br>
-          <br>
-          <label for="gebruikersnaam">gebruikersnaam:</label>
-          <input type="text" id="gebruikersnaam" name="gebruikersnaam" required>
-          <br>
-          <br>
-          <br>
-          <label for="wachtwoord">wachtwoord:</label>
-          <input type="password" id="wachtwoord" name="wachtwoord" required></input>
-          <br>
-          <br>
-          <br>
-          <label for="email">email:</label>
-          <input type="email" id="email" name="email" required></input>
-          <br>          
-          <br>          
-          <br>
-          <br>
-          <input name="submit" class="button" type="submit" value="Sign up">
-        </form>
       </div>
     </div>
     <?php $database = include('database.php') ?>
