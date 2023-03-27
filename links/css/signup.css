@@ -1,0 +1,48 @@
+.signup-wrapper{
+  width: 70%;
+  float: left;
+  height: 100vh;
+  background-color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+}
+
+.titleholder{
+  padding: 3rem 3rem;
+}
+.titleholder > a > * {
+  font-family: sans-serif;
+  margin: 0;
+  color: #00A35A;
+}
+
+.signupholder{
+  flex-grow: 1;
+  width: 100%;
+  text-align: center;
+}
+
+.signupholder > div > h1{
+  color: #007d45;
+  font-size: 260%;
+}
+
+.signupholder > *{
+  font-family: sans-serif;
+}
+
+.signin-wrapper{
+  float: left;
+  width: 30%;
+  height: 100vh;
+  background-color: #c4f3dd;
+}
+
+.titleholder{
+  padding: 3rem 3rem;
+}
+.titleholder > a > * {
+  font-family: sans-serif;
+  margin: 0;
+  color: #00A35A;
+}

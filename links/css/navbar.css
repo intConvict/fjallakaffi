@@ -1,0 +1,35 @@
+.navbar_wrapper{
+  position: fixed;
+  top: 0;
+  background-color: #f5f5f5;
+  padding: 3rem 0;
+  width: 100%;
+  box-shadow: 0px 1px 4px grey;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+}
+
+.navbar_wrapper-titleholder > a > * {
+  font-family: sans-serif;
+  margin: 0 0 0 3rem;
+  color: #00A35A;
+}
+
+.navbar_wrapper-accountholder{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar_wrapper-accountholder > a {
+  margin: 0 3rem 0 0;
+  font-family: sans-serif;
+  color: #00A35A;
+}
+
+.navbar_wrapper-accountholder > a > * {
+  font-family: sans-serif;
+  margin: 0 0 0 3rem;
+  color: #00A35A;
+}
