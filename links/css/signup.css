@@ -36,15 +36,15 @@
 
 .signupholder-formholder > form > input:not(.button) {
   height: 2rem;
-  width: 25rem;
+  width: 30%;
 }
 
 .signupholder-formholder > form > .button {
   transform: translateX(-50%);
-  height: 3rem;
-  width: 9rem;
+  height: 4rem;
+  width: 12rem;
   transition: .2s;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   background-color: #00A35A;
   border: solid 4px black;
   border-radius: .7rem;
@@ -52,7 +52,7 @@
 
 .signupholder-formholder > form > .button:hover {
   transition: .4s;
-  font-size: 2rem;
+  font-size: 1.8rem;
 }
 
 .signupholder > div > h1{
@@ -70,5 +70,31 @@
   height: 100vh;
   width: 30%;
   float: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.signin-wrapper > * {
+  margin: 0;
+  font-family: sans-serif;
+  color: white;
+}
+
+.signin-wrapper > h1 {
+  padding-bottom: .2rem;
+}
+
+.signin-wrapper > h3 {
+  padding-bottom: 5rem;
+}
+
+.signin-wrapper > * > a {
+  color: white;
+}
+
+.signin-wrapper > * > a:hover {
+  text-decoration: underline;
 }
 /******************************************************************/

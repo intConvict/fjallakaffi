@@ -1,3 +1,33 @@
+<?php
+$database = include('database.php');
+
+if(isset($_POST['submit'])){
+
+  //set session array
+  session_start();
+  if (isset($_POST) && !empty($_POST)) {
+    $_SESSION = $_POST;
+  }
+
+  //get post array ready for use
+  $voornaam = mysqli_real_escape_string($conn, $_POST['voornaam']);
+  $achternaam = mysqli_real_escape_string($conn, $_POST['achternaam']);
+  $gebruikersnaam = mysqli_real_escape_string($conn, $_POST['gebruikersnaam']);
+  $wachtwoord = mysqli_real_escape_string($conn, $_POST['wachtwoord']);
+  $email = mysqli_real_escape_string($conn, $_POST['email']);
+
+  //check if user available
+  $check_availability = "SELECT gebruikersnaam, wachtwoord FROM `gebruikers` WHERE gebruikersnaam = '$gebruikersnaam' AND wachtwoord = '$wachtwoord';";
+  
+  $sql = "INSERT INTO gebruikers(voornaam, achternaam, gebruikersnaam, wachtwoord, email ) VALUES ('$voornaam', '$achternaam', '$gebruikersnaam', '$wachtwoord', '$email')";
+  
+  mysqli_query($conn, $sql);
+
+  header('Location: index.php');
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -55,25 +85,19 @@
         </form>
       </div>
     </div>
-    <?php $database = include('database.php') ?>
   </div>
   <div class="signin-wrapper">
+    <h1>
+      Welkom
+    </h1>
+    <h3>
+      heb je al een account?
+    </h3>
+    <h4>
+      <a href="signin.php">
+        sign in
+      </a>
+    </h4>
   </div>
 </body>
 </html>
-
-<?php
-if(isset($_POST['submit'])){
-  $voornaam = mysqli_real_escape_string($conn, $_POST['voornaam']);
-  $achternaam = mysqli_real_escape_string($conn, $_POST['achternaam']);
-  $gebruikersnaam = mysqli_real_escape_string($conn, $_POST['gebruikersnaam']);
-  $wachtwoord = mysqli_real_escape_string($conn, $_POST['wachtwoord']);
-  $email = mysqli_real_escape_string($conn, $_POST['email']);
-  
-  $sql = "INSERT INTO gebruikers(voornaam, achternaam, gebruikersnaam, wachtwoord, email ) VALUES ('$voornaam', '$achternaam', '$gebruikersnaam', '$wachtwoord', '$email')";
-  header('Location: index.php');
-
-  mysqli_query($conn, $sql);
-}
-
-?>

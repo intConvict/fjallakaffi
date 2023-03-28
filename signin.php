@@ -1,3 +1,29 @@
+<?php
+include('database.php') ;
+
+if(isset($_POST['submit'])){
+  
+  $gebruikersnaam = $_POST['gebruikersnaam'];
+  $wachtwoord = $_POST['wachtwoord']; 
+  
+  $sql = "SELECT gebruikersnaam, wachtwoord FROM `gebruikers` WHERE gebruikersnaam = '$gebruikersnaam' AND wachtwoord = '$wachtwoord';";
+  
+  $check = mysqli_query($conn, $sql);
+  $num_rows = mysqli_num_rows($check);
+
+  if ($num_rows == 0) {
+      echo "No results found";
+  } else {
+    session_start();
+    $_SESSION = $_POST;
+    mysqli_fetch_assoc($check);
+    header('Location: index.php');
+  }
+
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,41 +35,51 @@
   <link rel="stylesheet" href="links/css/index.css">
 </head>
 <body>
-  <div class="signup-wrapper">
+  <div class="signin-wrapper">
     <div class='titleholder'>
       <a href="index.php">
         <h1>fjallakaffi</h1>
         <h3>recipes</h3>
       </a>
     </div>
-    <div class='signupholder'>
+    <div class='signinholder'>
       <div>
         <h1>
           Sign in :)
         </h1>
       </div>
-      <div class="signupholder-formholder">
+      <div class="signinholder-formholder">
+        <form method="post">
+          <br>
+          <label for="gebruikersnaam">gebruikersnaam:</label>
+          <input type="text" id="gebruikersnaam" name="gebruikersnaam" required>
+          <br>
+          <br>
+          <br>
+          <label for="wachtwoord">wachtwoord:</label>
+          <input type="password" id="wachtwoord" name="wachtwoord" required></input>
+          <br>          
+          <br>          
+          <br>
+          <br>
+          <input name="submit" class="button" type="submit" value="Sign in">
+        </form>
       </div>
     </div>
     <?php $database = include('database.php') ?>
   </div>
-  <div class="signin-wrapper">
+  <div class="signup-wrapper">
+    <h1>
+      Welkom
+    </h1>
+    <h3>
+      heb je nog geen account?
+    </h3>
+    <h4>
+      <a href="signup.php">
+        sign up
+      </a>
+    </h4>
   </div>
 </body>
 </html>
-
-<?php
-if(isset($_POST['submit'])){
-  $voornaam = mysqli_real_escape_string($conn, $_POST['voornaam']);
-  $achternaam = mysqli_real_escape_string($conn, $_POST['achternaam']);
-  $gebruikersnaam = mysqli_real_escape_string($conn, $_POST['gebruikersnaam']);
-  $wachtwoord = mysqli_real_escape_string($conn, $_POST['wachtwoord']);
-  $email = mysqli_real_escape_string($conn, $_POST['email']);
-  
-  $sql = "INSERT INTO gebruikers(voornaam, achternaam, gebruikersnaam, wachtwoord, email ) VALUES ('$voornaam', '$achternaam', '$gebruikersnaam', '$wachtwoord', '$email')";
-  header('Location: index.php');
-
-  mysqli_query($conn, $sql);
-}
-
-?>
