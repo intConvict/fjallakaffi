@@ -7,9 +7,6 @@
   <title>Document</title>
   <link rel="stylesheet" href="links/css/index.css">
 </head>
-<body>
-  
-</body>
 </html>
 
 <?php

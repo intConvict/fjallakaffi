@@ -3,16 +3,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
   <link rel="stylesheet" href="links/css/navbar.css">
 </head>
 <body>
   <header class='navbar_wrapper'>
     <div class='navbar_wrapper-titleholder'>
-      <a>
+      <a href="index.php">
         <h1>fjallakaffi</h1>
         <h3>recipes</h3>
       </a>
@@ -32,7 +28,7 @@
       </div>
     <?php }else{?>
       <div class='navbar_wrapper-accountholder'>
-        <a href="index.php">
+        <a href="profile.php">
           <h3>
             <?php 
             echo $_SESSION['gebruikersnaam'];
