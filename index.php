@@ -21,7 +21,7 @@
     if (mysqli_num_rows($result) > 0) {
       foreach($result as $recept) {
       ?>
-      <a href="#">
+      <a href="receptPage.php?gerecht=<?php echo $recept['gerecht_naam'] ?>">
         <div class="recept_wrapper">
           <div class="img-div" style="background-image: url(<?php if(!empty($recept['foto'])){
             echo $recept['foto'];
