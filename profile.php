@@ -4,7 +4,7 @@
 
   $gebruikersnaam = $_SESSION['gebruikersnaam'];
 
-  $sql = "SELECT gebruikers.gebruikersnaam, recepten.gerecht_naam, recepten.instructie, recepten.foto, recepten.tijd, recepten.gang, recepten.moeilijkheid FROM gebruikers JOIN recepten ON gebruikers.id = recepten.gebruiker_id WHERE gebruikers.gebruikersnaam = '$gebruikersnaam'";
+  $sql = "SELECT gebruikers.gebruikersnaam, recepten.gerecht_naam, recepten.foto, recepten.tijd, recepten.gang, recepten.moeilijkheid FROM gebruikers JOIN recepten ON gebruikers.id = recepten.gebruiker_id WHERE gebruikers.gebruikersnaam = '$gebruikersnaam'";
   $result = mysqli_query($conn, $sql);
 ?>
 
@@ -46,6 +46,16 @@
               <h4>
                 <?php echo $recept['tijd'] ?>min
               </h4>
+            </div>
+            <div class="gang-div">
+              <h6>
+                - <?php echo $recept['gang'] ?>
+              </h6>
+            </div>
+            <div class="diff-div">
+              <h6>
+                - <?php echo $recept['moeilijkheid'] ?>
+              </h6>
             </div>
           </div>
         </a>

@@ -3,100 +3,132 @@
 }
 
 .top-bar > a > .terug {
-  width: 10rem;
   text-align: center;
+  width: 10rem;
 }
 
 .top-bar > a > .terug > h2 {
-  color: black;
-  border-radius: .4rem;
   font-family: sans-serif;
+  border-radius: .4rem;
   padding: 1rem 0;
+  color: black;
 }
 
 .make-recipe_wrapper{
-  padding: 1rem;
   margin: 0 1rem;
   display: grid;
+  padding: 1rem;
 }
 
 .row-1{
-  display: flex;
   justify-content: space-between;
-  width: 100%;
-  height: 500px;
   padding-bottom: 2rem;
+  display: flex;
+  height: 500px;
+  width: 100%;
 }
 
 .row-1 > .col-1{
-  content: 'choose foto';
-  border: solid black 1px;
-  overflow: hidden;
   background-repeat: no-repeat;
   background-position: center;
-  border-radius: 1rem;
+  border: solid black 1px;
   background-size: cover;
+  content: 'choose foto';
+  border-radius: 1rem;
+  overflow: hidden;
   width: 50%;
 }
 
 .row-1 > .col-1 > input {
-  position: relative;
-  z-index: 9999;
   transform: translateY(-2rem);
   height: calc(100% + 2rem);
+  position: relative;
+  z-index: 9999;
   width: 100%;
 }
 
 .row-1 > .col-1 > h1 {
-  z-index: 9998;
-  font-family: sans-serif;
-  padding-left: 50%;
-  position: absolute;
   transform: translate(-50%, -20rem);
+  font-family: sans-serif;
+  position: absolute;
+  padding-left: 50%;
+  z-index: 9998;
 }
 
 .row-1 > .col-2{
-  display: flex;
-  flex-direction: column;
   justify-content: space-between;
+  flex-direction: column;
   padding-left: 2%;
+  display: flex;
   width: 50%;
 }
 
 .row-1 > .col-2 > input{
   border-radius: 1rem;
+  height: min-content;
   font-size: 2rem;
   padding: 1rem 0;
-  height: min-content;
   width: 90%;
 }
 
 .row-1 > .col-2 > a > .ingredient{
-  text-align: center;
   border: solid black 1px;
   font-family: sans-serif;
   border-radius: 1rem;
+  text-align: center;
   font-size: 1.5rem;
   padding: 1rem 0;
   width: 90%;
 }
 
 .row-1 > .col-2 > a > .ingredient > h2{
-  margin: 0;
   color: black;
+  margin: 0;
 }
 
 .row-2{
+  border: solid black 1px;
+  padding: 1rem;
+  height: 50%;
+}
+
+.label {
+  font-size: 250%;
+  font-family: sans-serif;
+}
+
+.row-2 > #textarea {
+  border: none;
+  resize: none;
+  height: 100%;
   width: 100%;
-  height: 300px;
 }
 
 .row-3{
-  width: 100%;
-  height: 300px;
+  padding: 1rem;
+  justify-content: space-around;
+  display: flex;
+  height: min-content;
+}
+
+.row-3 > * {
+  height: min-content;
+  border-radius: 2rem;
+  font-size: 2vw;
+  padding: .5rem;
 }
 
 .row-4{
+  display: flex;
+  justify-content: center;
+  height: min-content;
   width: 100%;
-  height: 300px;
+}
+
+.row-4 > input{
+  border-radius: .5rem;
+  border: solid black 1px;
+  background-color: white;
+  padding: .5rem 3rem;
+  font-size: 3rem;
 }
