@@ -5,6 +5,13 @@
 
   $sql = "SELECT gebruikers.gebruikersnaam, recepten.gerecht_naam, recepten.foto, recepten.tijd, recepten.gang, recepten.moeilijkheid FROM gebruikers JOIN recepten ON gebruikers.id = recepten.gebruiker_id";
   $result = mysqli_query($conn, $sql);
+  $num_rows = mysqli_num_rows($result);
+  $num_rows_amount;
+  if($num_rows <= 1){
+    $num_rows_amount = '';
+  } else {
+    $num_rows_amount = 's';
+  }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,6 +23,9 @@
   <link rel="stylesheet" href="links/css/index.css">
 </head>
 <body>
+  <div class="num_rows">
+    <?php echo '(' . $num_rows . ')' . ' different recipe' . $num_rows_amount?>
+  </div>
   <div class="recipe_wrapper">
     <?php 
     if (mysqli_num_rows($result) > 0) {

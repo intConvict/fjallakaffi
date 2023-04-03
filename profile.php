@@ -6,6 +6,13 @@
 
   $sql = "SELECT gebruikers.gebruikersnaam, recepten.gerecht_naam, recepten.foto, recepten.tijd, recepten.gang, recepten.moeilijkheid FROM gebruikers JOIN recepten ON gebruikers.id = recepten.gebruiker_id WHERE gebruikers.gebruikersnaam = '$gebruikersnaam'";
   $result = mysqli_query($conn, $sql);
+  $num_rows = mysqli_num_rows($result);
+  $num_rows_amount;
+  if($num_rows <= 1){
+    $num_rows_amount = '';
+  } else {
+    $num_rows_amount = 's';
+  }
 ?>
 
 <!DOCTYPE html>
@@ -19,12 +26,15 @@
   <link rel="stylesheet" href="links/css/profileStatus.css">
 </head>
 <body>
+  <div class="num_rows">
+    <?php echo '(' . $num_rows . ')' . ' different recipe' . $num_rows_amount?>
+  </div>
   <div class="profileStatus_wrapper">
     <?php 
     if (mysqli_num_rows($result) > 0) {
       foreach($result as $recept) {
         ?>
-        <a href="#">
+        <a href="receptPage.php?gerecht=<?php echo $recept['gerecht_naam'] ?>">
           <div class="recept_wrapper">
             <div class="img-div" style="background-image: url(<?php if(!empty($recept['foto'])){
               echo $recept['foto'];
